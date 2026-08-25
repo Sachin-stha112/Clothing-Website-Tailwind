@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Their Nibs</title>
     <style>
+      /* Base white color for nav items — visible over the dark hero image */
       .nav-link {
         color: white;
         transition: color 0.3s ease;
@@ -22,7 +23,7 @@
       id="navbar"
       class="flex items-start fixed top-0 inset-x-0 z-50 transition-all duration-300"
     >
-      <!--Brand Logo-->
+      <!--Brand Logo — brightness-0 invert turns the dark logo white over the hero, removed on scroll-->
       <div>
         <img
           id="nav-logo"
@@ -230,7 +231,7 @@
       </div>
     </nav>
 
-    <!--Hero Section-->
+    <!--Hero Section — full viewport height, navbar sits on top via fixed + z-50-->
     <section class="relative w-full h-screen">
       <img
         src="./images/Print_banner-2.jpg"
@@ -238,10 +239,21 @@
         class="w-full h-full object-cover"
       />
     </section>
-
+    <!--Help Support Button-->
+    <div
+      class="fixed bottom-6 left-8 w-20 h-20 rounded-full bg-[#f2c1ae] flex items-center justify-center"
+    >
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40" fill="black">
+          <path d="M64 416L64 192C64 139 107 96 160 96L480 96C533 96 576 139 576 192L576 416C576 469 533 512 480 512L360 512C354.8 512 349.8 513.7 345.6 516.8L230.4 603.2C226.2 606.3 221.2 608 216 608C202.7 608 192 597.3 192 584L192 512L160 512C107 512 64 469 64 416z"/>
+        </svg>
+      </a>
+    </div>
     <!--Dummy content so you can scroll and test the navbar-->
     <section class="h-screen bg-gray-100 flex items-center justify-center">
-      <h2 class="text-3xl font-bold text-gray-600">Scroll to see navbar effect</h2>
+      <h2 class="text-3xl font-bold text-gray-600">
+        Scroll to see navbar effect
+      </h2>
     </section>
 
     <script>
@@ -250,6 +262,8 @@
       const navLinks = document.querySelectorAll(".nav-link");
       const navIcons = document.querySelectorAll(".nav-icon");
 
+      // Scrolled past hero → solid white navbar with black text/icons
+      // At top → transparent navbar with white text/icons over the banner
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
           navbar.classList.add("bg-white", "shadow-md");
@@ -266,7 +280,7 @@
         }
       });
 
-      // Run once on load to set initial state
+      // Fire once on load so the correct state is set immediately
       window.dispatchEvent(new Event("scroll"));
     </script>
   </body>
