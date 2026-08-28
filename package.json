@@ -1,0 +1,25 @@
+{
+  "name": "clothing-website-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=8080 --open=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sachin-stha112/Clothing-Website-Tailwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sachin-stha112/Clothing-Website-Tailwind/issues"
+  },
+  "homepage": "https://github.com/Sachin-stha112/Clothing-Website-Tailwind#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
