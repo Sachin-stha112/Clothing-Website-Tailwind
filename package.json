@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server --port=8080 --open=index.html",
+    "format": "prettier --write \"./**/*.{html,css,js,json,md}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/Sachin-stha112/Clothing-Website-Tailwind#readme",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.3"
   }
 }
